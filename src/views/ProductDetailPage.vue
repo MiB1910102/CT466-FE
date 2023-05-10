@@ -98,37 +98,46 @@ export default {
 
 <style scoped>
 #page-wrap {
-  margin-top: 16px;
-  padding: 16px;
-  max-width: 600px;
+  margin-top: 50px;
+  padding: 20px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px #888;
 }
 
 #img-wrap {
   text-align: center;
-  border-radius: 20px;
+  border-radius: 10px;
   padding: 10px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 5px #888;
+  margin-bottom: 20px;
 }
 
 img {
   width: 400px;
   height: 400px;
+  border-radius: 10px;
 }
 
 #product-details {
-  padding: 16px;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 5px #888;
+  border-radius: 10px;
   position: relative;
 }
-#product-details h1 {
+#product-details h3 {
   text-align: left;
+  margin-bottom: 10px;
 }
-#add-to-cart {
-  width: 100%;
-}
-
 #price {
   position: absolute;
-  top: 24px;
-  right: 16px;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fb6e2e;
 }
 .button-detail {
   background-color: #fb6e2e;
@@ -140,5 +149,18 @@ img {
   font-weight: bold;
   outline: 0;
   padding: 16px;
+  margin-top: 20px;
+  transition: all 0.3s ease-in-out;
+}
+.grey-button {
+  background-color: #f0f0f0;
+  color: #6c757d;
+}
+.green-button {
+  background-color: #28a745;
+}
+.button-detail:hover {
+  background-color: #ff8a4a;
+  transform: translateY(-5px);
 }
 </style>

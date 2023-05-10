@@ -17,8 +17,10 @@
             v-for="item in order.cartItems"
             :key="item._id"
           >
-            <span>{{ item.name }}</span>
-            <span class="price">1x{{ item.price }}đ</span>
+            <span>{{ item.product.name }}</span>
+            <span class="price"
+              >{{ item.product.price }}đ x{{ item.quantity }}</span
+            >
           </div>
         </div>
       </div>

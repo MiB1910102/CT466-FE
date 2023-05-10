@@ -9,6 +9,7 @@
       type="number"
       v-bind:value="quantity"
       v-on:input="updateQuantity($event.target.value)"
+      min="1"
     />
     <button class="remove-button" @click="remove(product.id)">Xóa</button>
   </div>
@@ -41,19 +42,22 @@ export default {
   },
   methods: {
     updateQuantity(newQuantity) {
-      axios
-        .patch(`/api/users/${this.user.result.id}/cart/${this.product.id}`, {
-          quantity: newQuantity,
-        })
+      const id = this.product.id;
+      if (newQuantity > 0) {
+        axios
+          .patch(`/api/users/${this.user.result.id}/cart/${id}`, {
+            quantity: newQuantity,
+          })
 
-        .then((response) => {
-          this.loadData();
+          .then((response) => {
+            this.loadData();
 
-          console.log(response.data);
-        })
-        .catch((error) => {
-          console.log(error);
-        });
+            console.log(response.data);
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      }
     },
   },
 };

@@ -57,9 +57,7 @@ export default {
         `/api/users/${this.user.result.id}/cart/${id}`
       );
       if (response.status === 200) {
-        // Xóa sản phẩm khỏi danh sách cartItems
-        const index = this.cartItems.findIndex((i) => i.id === id);
-        this.cartItems.splice(index, 1);
+        await this.loadData();
       }
     },
     async loadData() {

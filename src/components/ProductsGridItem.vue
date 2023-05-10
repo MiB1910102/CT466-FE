@@ -7,7 +7,7 @@
 
     <p class="product-price">{{ product.price }}VNĐ</p>
     <router-link v-bind:to="'/products/' + product.id">
-      <button>Xem chi tiết</button>
+      <button class="product-btn">Xem chi tiết</button>
     </router-link>
   </div>
 </template>
@@ -49,5 +49,18 @@ a {
 
 button {
   width: 100%;
+}
+.product-btn {
+  background-color: #e34f23;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  transition: background-color 0.3s ease-in-out;
+}
+.product-btn:hover {
+  background-color: #c73e1d;
 }
 </style>

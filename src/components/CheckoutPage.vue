@@ -41,11 +41,12 @@ export default {
   computed: {
     totalPrice() {
       const sum = this.cartItems.reduce(
-        (sum, item) => sum + parseFloat(item.price),
+        (sum, item) =>
+          sum + parseFloat(item.product?.price) * parseInt(item.quantity),
         0
       );
       const total = sum > 999 ? sum / 1000 : sum;
-      console.log(total.toFixed(3).toString());
+      console.log(total.toFixed(3).toString()); // hiển thị kết quả với 3 chữ số thập phân
       return total.toFixed(3).toString();
     },
   },

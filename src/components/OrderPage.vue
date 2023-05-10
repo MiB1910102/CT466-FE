@@ -17,8 +17,10 @@
             v-for="item in order.cartItems"
             :key="item._id"
           >
-            <span>{{ item.name }}</span>
-            <span class="price">1x{{ item.price }}đ</span>
+            <span>{{ item.product.name }}</span>
+            <span class="price"
+              >{{ item.product.price }}đ x{{ item.quantity }}</span
+            >
           </div>
         </div>
       </div>
@@ -69,33 +71,46 @@ export default {
   align-items: center;
   margin-top: 20px;
   font-size: 18px;
+  gap: 10px;
 }
 
 .order-item {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px;
-  margin-bottom: 10px;
   width: 100%;
   max-width: 800px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease-in-out;
 }
 
 .order-item:hover {
-  background-color: #f5f5f5;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .order-date {
   font-weight: bold;
   cursor: pointer;
+  font-size: 22px;
+}
+
+.order-total {
+  font-weight: bold;
+  font-size: 18px;
 }
 
 .order-detail {
   display: none;
   flex-direction: column;
   font-size: 16px;
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f5f5f5;
 }
 
 .order-detail.visible {
@@ -103,10 +118,22 @@ export default {
 }
 
 .order-detail-item {
-  display: flex;
-  justify-content: space-between;
+  margin-bottom: 5px;
 }
-.order-detail-item span.price {
-  margin-left: 10px;
+
+.order-detail-item span:first-child {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.price {
+  font-weight: normal;
+  margin-left: 5px;
+}
+
+h1 {
+  font-size: 30px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 </style>
